@@ -1,0 +1,25 @@
+fila_prioritaria = []
+fila_comum = []
+
+def adicionar_cliente(idoso, gestante, nome):
+    if idoso or gestante:
+        fila_prioritaria.append(nome)
+    else:
+        fila_comum.append(nome)
+
+def atender():
+    while fila_prioritaria or fila_comum:
+        if fila_prioritaria:
+            cliente = fila_prioritaria.pop(0)
+            print(f"Atendendo cliente prioritário: {cliente}")
+        if fila_comum:
+            cliente = fila_comum.pop(0)
+            print(f"Atendendo cliente comum: {cliente}")
+
+# Exemplo:
+adicionar_cliente(True, False, "Maria")
+adicionar_cliente(False, False, "João")
+adicionar_cliente(False, True, "Ana")
+adicionar_cliente(False, False, "Carlos")
+
+atender

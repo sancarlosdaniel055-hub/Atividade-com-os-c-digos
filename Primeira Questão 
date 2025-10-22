@@ -1,0 +1,17 @@
+usuario_correto = "usuario123"
+senha_correta = "senha123"
+tentativas = 3
+
+while tentativas > 0:
+    usuario = input("Digite o usuário: ")
+    senha = input("Digite a senha: ")
+    if usuario == usuario_correto and senha == senha_correta:
+        print("Login efetuado com sucesso. Acesso permitido.")
+        break
+    else:
+        tentativas -= 1
+        print(f"Usuário ou senha incorretos. Tentativas restantes: {tentativas}")
+if tentativas == 0:
+    print("Usuário bloqueado por exceder tentativas.") 
+    
+    

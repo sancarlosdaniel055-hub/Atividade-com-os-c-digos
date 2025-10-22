@@ -1,0 +1,17 @@
+valor_compra = float(input("Digite o valor da compra: "))
+cupom = input("Digite o código do cupom (ou pressione Enter): ").upper()
+
+frete = 15
+desconto = 0
+
+if cupom == "DESC10":
+    desconto = valor_compra * 0.10
+if cupom == "FRETEGRATIS":
+    frete = 0
+
+total = valor_compra - desconto + frete
+
+print(f"Valor da compra: R$ {valor_compra:.2f}")
+print(f"Desconto: R$ {desconto:.2f}")
+print(f"Frete: R$ {frete:.2f}")
+print(f"Total a pagar: R$ {total:.2f}") 

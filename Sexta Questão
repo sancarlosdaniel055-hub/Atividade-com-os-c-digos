@@ -1,0 +1,21 @@
+import re
+
+senha = input("Digite a senha para verificação: ")
+
+erros = []
+
+if len(senha) < 8:
+    erros.append("No mínimo 8 caracteres")
+if not re.search(r"[A-Z]", senha):
+    erros.append("Pelo menos 1 letra maiúscula")
+if not re.search(r"d", senha):
+    erros.append("Pelo menos 1 número")
+if not re.search(r"[!@#$%^&*(),.?":{}|<>]", senha):
+    erros.append("Pelo menos 1 símbolo especial")
+
+if erros:
+    print("Senha insegura. Falta:")
+    for erro in erros:
+        print("-", erro)
+else:
+    print("Senha segura.")  

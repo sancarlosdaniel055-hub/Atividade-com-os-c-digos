@@ -1,0 +1,23 @@
+perguntas = [
+    ("Qual a capital do Brasil?", "Brasília"),
+    ("2 + 2 = ?", "4"),
+    ("Qual a cor do céu?", "azul"),
+    ("Quem descobriu o Brasil?", "Pedro Álvares Cabral"),
+    ("Qual animal late?", "cachorro")
+]
+
+pontuacao = 0
+
+for pergunta, resposta_certa in perguntas:
+    resposta = input(pergunta + " ")
+    if resposta.strip().lower() == resposta_certa.lower():
+        pontuacao += 1
+
+print(f"Sua pontuação foi: {pontuacao}")
+
+if pontuacao <= 2:
+    print("Tente novamente")
+elif pontuacao <= 4:
+    print("Muito bem")
+else:
+    print("Excelente")  

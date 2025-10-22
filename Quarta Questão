@@ -1,0 +1,11 @@
+salario_mensal = float(input("Digite o salário mensal: "))
+salario_anual = salario_mensal * 12
+
+if salario_anual <= 28559.70:
+    imposto = 0
+elif salario_anual <= 60000:
+    imposto = salario_anual * 0.15
+else:
+    imposto = salario_anual * 0.275
+
+print(f"O valor do imposto anual é R$ {imposto:.2f}") 

@@ -1,0 +1,20 @@
+from datetime import datetime
+
+entrada_str = input("Digite o horário de entrada (HH:MM): ")
+saida_str = input("Digite o horário de saída (HH:MM): ")
+
+entrada = datetime.strptime(entrada_str, "%H:%M")
+saida = datetime.strptime(saida_str, "%H:%M")
+
+tempo = (saida - entrada).seconds / 3600  # horas
+
+if tempo <= 1:
+    valor = 10
+elif tempo <= 3:
+    valor = 20
+else:
+    valor = 30
+
+print(f"Tempo de permanência: {tempo:.2f} horas")
+print(f"Valor a pagar: R$ {valor:.2f}")
+print("Pagamento realizado. Saída liberada.") 
